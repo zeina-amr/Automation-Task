@@ -33,3 +33,18 @@ Scenario: Increase product quantity before adding to the cart
          And   user increases the quantity to 3 
          Then  user clicks ADD TO CART 
          And   products quantity should be 3
+
+
+Scenario: Complete checkout flow
+
+        Given user is on products page
+        When  user adds multiple products in the cart
+        Then  user opens the cart
+        And   user proceeds to checkout
+        Then  checkout page should be displayed 
+        And   selected products should be displayed in checkout table
+        Then  user places the order
+        And   user selects country Egypt
+        And   user accepts terms & conditions 
+        And   user proceeds with the order
+        Then  success message should be displayed

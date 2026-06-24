@@ -35,6 +35,10 @@ class SearchProduct {
         this.cartIcon().click()
     }
 
+    proceedToCheckout(){
+        return cy.contains('button', 'PROCEED TO CHECKOUT')
+    }
+
     cartProductName(){
         return cy.get('.cart-preview .product-name')
     }
@@ -58,6 +62,27 @@ class SearchProduct {
         return cy.contains('.product-name', productName)
                  .parents('.products')
                  .find('.quantity')
+    }
+
+    checkoutTable(){
+        return cy.get('#productCartTables')
+    }
+
+
+    placeOrder(){
+        return cy.contains('button', 'Place Order')
+    }
+
+    countryDropdown(){
+        return cy.get('Select')
+    }
+
+    agreeCheckbox(){
+        return cy.get('.chkAgree')
+    }
+
+    proceedButton(){
+        return cy.contains('button', 'Proceed')
     }
 
 }

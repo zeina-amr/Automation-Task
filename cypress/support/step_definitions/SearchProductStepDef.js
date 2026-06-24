@@ -83,5 +83,45 @@ Then('user clicks ADD TO CART', ()=> {
 
 Then('products quantity should be 3', ()=> {
     searchProduct.cartProductQuantity().should('contain', '3')
-                 
+})
+
+
+Then('user proceeds to checkout', ()=> {
+    searchProduct.proceedToCheckout().click()
+})
+
+
+Then('checkout page should be displayed', ()=> {
+    searchProduct.checkoutTable().should('be.visible')
+})
+
+Then('selected products should be displayed in checkout table', ()=> {
+    searchProduct.checkoutTable().should('contain', 'Brocolli')
+    searchProduct.checkoutTable().should('contain', 'Cauliflower')
+    searchProduct.checkoutTable().should('contain', 'Cucumber')
+})
+
+
+Then('user places the order', ()=> {
+    searchProduct.placeOrder().click()
+})
+
+
+Then('user selects country Egypt', ()=>{
+    searchProduct.countryDropdown().select('Egypt')
+})
+
+
+Then('user accepts terms & conditions',()=>{
+    searchProduct.agreeCheckbox().check()
+})
+
+
+Then('user proceeds with the order', ()=> {
+    searchProduct.proceedButton().click()
+})
+
+
+Then('success message should be displayed', ()=> {
+    cy.contains('Thank you, your order has been placed successfully').should('be.visible')
 })
