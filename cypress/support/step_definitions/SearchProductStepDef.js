@@ -1,7 +1,16 @@
 import {Given, When, Then} from '@badeball/cypress-cucumber-preprocessor';
 import SearchProduct from '../../e2e/pages/SearchProduct';
 
+let testData
+before( () => {
+    cy.fixture('greenKartProducts').then((data) =>{
+        testData = data
+    })
+})
+
 const searchProduct = new SearchProduct()
+
+
 
 Given('user is on products page', ()=> {
 

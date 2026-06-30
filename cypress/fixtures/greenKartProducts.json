@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "name": "Brocolli",
+            "quantity": 2
+        },
+
+        {
+            "name": "Cauliflower",
+            "quantity": 3
+        },
+
+        {
+            "name": "Cucumber",
+            "quantity": 1
+        },
+
+        {
+            "name": "Beetroot",
+            "quantity": 4
+        }
+
+    ],
+
+    "promoCode": "rahulshettyacademy",
+    "country": "Egypt"
+
+}

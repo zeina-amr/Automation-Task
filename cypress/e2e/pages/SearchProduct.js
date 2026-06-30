@@ -85,6 +85,36 @@ class SearchProduct {
         return cy.contains('button', 'Proceed')
     }
 
+    checkoutRows(){
+        return cy.get('tbody tr')
+    }
+
+    grandTotal(){
+        return cy.get('.totAmt')
+    }
+
+    promoCodeField(){
+        return cy.get('.promoCode')
+    }
+
+    applyPromoCodeButton(){
+        return cy.get('.promoBtn')
+    }
+
+    promoAppliedInfo(){
+        return cy.get('.promoInfo')
+    }
+
+    discountPercentage(){
+        return cy.get('.discountPerc')
+    }
+
+    discountedAmount(){
+        return cy.get('.discountAmt')
+    }
+
+
+
 }
 
 export default SearchProduct
